@@ -12,7 +12,7 @@ pipeline {
     stages{
         stage('Checkout'){
             steps{
-                git ""
+                git "https://github.com/shubhamWithCode/terraform-eks-cluster-nodegroup.git"
             }
         }
 
