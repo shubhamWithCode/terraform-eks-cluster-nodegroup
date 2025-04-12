@@ -3,8 +3,8 @@ pipeline {
 
     parameters{
         choice(
-            name: 'ACTION'
-            choices: ['apply', 'destroy']
+            name: 'ACTION',
+            choices: ['apply', 'destroy'],
             description: 'select the action to perform'
         )
     }
