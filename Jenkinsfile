@@ -16,6 +16,7 @@ pipeline {
     stages{
         stage('Checkout'){
             steps{
+                deleteDir() // 
                 git "https://github.com/shubhamWithCode/terraform-eks-cluster-nodegroup.git"
             }
         }
