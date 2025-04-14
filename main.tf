@@ -5,8 +5,8 @@ resource "aws_eks_cluster" "nike-main-cluster" {
   role_arn = aws_iam_role.nike-eks_cluster_role.arn
 
   vpc_config {
-    //subnet_ids = data.aws_subnets.available-subnets.ids
-    subnet_ids = data.aws_subnets.default.ids
+    subnet_ids = data.aws_subnets.available-subnets.ids
+    //subnet_ids = data.aws_subnets.default.ids
   }
 
   depends_on = [ aws_iam_role_policy_attachment.nike-AmazonEKSClusterPolicy, aws_iam_role_policy_attachment.nike-AmazonEKSServicePolicy ]
@@ -27,8 +27,8 @@ resource "aws_eks_node_group" "nike-main-nodegrp" {
   cluster_name = aws_eks_cluster.nike-main-cluster.name
   node_group_name = "nike-nodegrp"
   node_role_arn = aws_iam_role.nike-eks_node_role.arn
-  //subnet_ids = data.aws_subnets.available-subnets.ids
-  subnet_ids = data.aws_subnets.default.ids
+  subnet_ids = data.aws_subnets.available-subnets.ids
+  //subnet_ids = data.aws_subnets.default.ids
   capacity_type = "ON_DEMAND"
   disk_size = "20"
   instance_types = ["t2.micro"]
