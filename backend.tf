@@ -4,8 +4,6 @@ terraform {
     key            = "eksNodeClustertfState/state.tfstate"
     region         = "us-east-1"
     encrypt        = true
-    # dynamodb       = {
-    #   table_name = "terraform-locks"
-    # }
+    dynamodb_table = "dynamo-db-table-name"
   }
 }
